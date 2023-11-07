@@ -9,11 +9,11 @@ function UserComponent() {
     } 
   return (
     <div>
-    
+
         <p>Hi, there {text}</p>
         <button
-        onClick={handleClick}
-        >Click Me</button>
+            onClick={handleClick}
+            >Click Me</button>
     </div>
   )
 }
