@@ -8,19 +8,51 @@ function App() {
     const [todos, setTodos] = useState([]);
 
     const addTodo = (todo) => {
-        setTodos((prev) => ([...prev, {id: Date.now(), ...todo}]))
+        // setTodos((prev) => ([...prev, {id: Math.random().toString(36).substring(2), ...todo}]))
+
+        setTodos((prev) => {
+            return [...prev, {id: Date.now(), ...todo}]
+        })
     }
 
     const updatedTodo = (id, todo) => {
-        setTodos((prev) => prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo)))
+        // setTodos((prev) => prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo)))
+        console.log(todo)
+        setTodos((prev) => {
+            return prev.map((prevTodo) => {
+                if(prevTodo.id === id) {
+                    return todo;
+                }else {
+                    return prevTodo
+                }
+            })
+        })
     }
 
     const deleteTodo = (id) => {
-        setTodos((prev) => prev.filter((todo) => todo.id !== id))
+        // setTodos((prev) => prev.filter((todo) => todo.id !== id))
+
+        setTodos((prev) => {
+            return prev.filter((todo) => {
+                return todo.id !== id;
+            })
+        })
     }
 
     const toggleComplete = (id) => {
-        setTodos((prev) => prev.map((prevTodo) => prevTodo.id === id ? {...prevTodo, completed: !prevTodo.completed} : prevTodo ))
+        console.log(id)
+        // setTodos((prev) => prev.map((prevTodo) => prevTodo.id === id ? {...prevTodo, completed: !prevTodo.completed} : prevTodo ))
+
+        setTodos((prev) => {
+            return prev.map((prevTodo) => {
+                if(prevTodo.id === id) {
+                    console.log(prevTodo.id)
+                    return {...prevTodo, completed: !prevTodo.completed}
+                }else {
+                    return prevTodo
+                }
+            })
+        })
     } 
 
     useEffect(() => {
