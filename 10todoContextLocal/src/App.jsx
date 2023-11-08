@@ -17,7 +17,7 @@ function App() {
 
     const updatedTodo = (id, todo) => {
         // setTodos((prev) => prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo)))
-        console.log(todo)
+        
         setTodos((prev) => {
             return prev.map((prevTodo) => {
                 if(prevTodo.id === id) {
@@ -33,14 +33,13 @@ function App() {
         // setTodos((prev) => prev.filter((todo) => todo.id !== id))
 
         setTodos((prev) => {
-            return prev.filter((todo) => {
+            return prev.filter((todo) => { // Filter returns an array of all matching element
                 return todo.id !== id;
             })
         })
     }
 
     const toggleComplete = (id) => {
-        console.log(id)
         // setTodos((prev) => prev.map((prevTodo) => prevTodo.id === id ? {...prevTodo, completed: !prevTodo.completed} : prevTodo ))
 
         setTodos((prev) => {
