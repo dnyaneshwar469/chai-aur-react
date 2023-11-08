@@ -45,7 +45,6 @@ function App() {
         setTodos((prev) => {
             return prev.map((prevTodo) => {
                 if(prevTodo.id === id) {
-                    console.log(prevTodo.id)
                     return {...prevTodo, completed: !prevTodo.completed}
                 }else {
                     return prevTodo
