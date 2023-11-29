@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import AddTodo from './component/AddTodo';
+import Todo from './component/Todo';
 
 
 function App() {
@@ -7,6 +9,8 @@ function App() {
   return (
     <>
       <h1 className='text-center'>Learn About Redux Toolkit</h1>
+      <AddTodo/>
+      <Todo/>
     </>
   )
 }
